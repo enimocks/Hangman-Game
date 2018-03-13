@@ -1,0 +1,14 @@
+#word {
+  text-align: center;
+  font-size: 70px;
+}
+
+#guessCount {
+  text-align: center;
+  font-size: 28px;
+}
+
+#wins {
+  text-align: center;
+  font-size: 28px;
+}
