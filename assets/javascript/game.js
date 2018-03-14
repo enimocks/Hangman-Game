@@ -2,15 +2,15 @@
 
 // List of possible words to guess, in an array called wordBank
 var wordBank = [
-  'targaryen',
-  'stark',
-  'lannister',
-  'arryn',
-  'tully',
-  'greyjoy',
-  'baratheon',
-  'tyrell',
-  'martell'
+  'TARGARYEN',
+  'STARK',
+  'LANNISTER',
+  'ARRYN',
+  'TULLY',
+  'GREYJOY',
+  'BARATHEON',
+  'TYRELL',
+  'MARTELL'
 ];
 
 
@@ -82,7 +82,7 @@ function checkWin() {
 
 
 document.onkeyup = function(event) {
-  var letterGuessed = event.key.toLowerCase();
+  var letterGuessed = event.key.toUpperCase();
   updateGuesses(letterGuessed);
   checkWin();
 };
