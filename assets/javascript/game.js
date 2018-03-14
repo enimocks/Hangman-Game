@@ -42,6 +42,7 @@ function startGame() { // initiates a round of the game with a unique, random wo
   guessCountContainer = document.getElementById('guessCount');
   guessCountContainer.innerHTML = guessesRemaining;
   incorrectGuessContainer = document.getElementById('lettersGuessed');
+  incorrectGuessContainer.innerHTML = incorrectGuesses.join(', ');
 }
 
 // checks key pressed to see if match for secret word, pushes into array (replacing underscores) if match
