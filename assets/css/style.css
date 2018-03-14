@@ -6,6 +6,7 @@ div {
 #word {
   text-align: center;
   font-size: 70px;
+  max-width: 95%;
 }
 
 #guessCount {

@@ -28,7 +28,7 @@ var winsContainer = document.getElementById('wins');
 
 // FUNCTIONS
 
-function startGame() {
+function startGame() { // initiates a round of the game with a unique, random word etc.
 
   word = wordBank[Math.floor(Math.random() * wordBank.length)];
   guessesRemaining = 10;
@@ -44,8 +44,8 @@ function startGame() {
   incorrectGuessContainer = document.getElementById('lettersGuessed');
 }
 
-function updateGuesses(letter) {
-
+// checks key pressed to see if match for secret word, pushes into array (replacing underscores) if match
+function updateGuesses(letter) { 
 
   if (word.indexOf(letter) === -1) {
     guessesRemaining--;
@@ -55,7 +55,9 @@ function updateGuesses(letter) {
     incorrectGuessContainer.innerHTML = incorrectGuesses.join(', ');
 
   } else {
+
     for (var i = 0; i < word.length; i++) {
+
       if (word.charAt(i) === letter) {
         correctGuesses[i] = letter;
       }
@@ -64,6 +66,7 @@ function updateGuesses(letter) {
   }
 }
 
+// checks to see if the game/round is over and is a win or loss -- if win or loss, then runs startGame();
 function checkWin() {
   if (correctGuesses.indexOf('_') === -1) {
     startGame();
@@ -75,7 +78,7 @@ function checkWin() {
   }
 }
 
-
+// captures key press from keyboard and runs it through the updateGuesses() function
 document.onkeyup = function(event) {
   var letterGuessed = event.key.toUpperCase();
   updateGuesses(letterGuessed);
