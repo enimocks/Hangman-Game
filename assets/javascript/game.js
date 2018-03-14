@@ -17,15 +17,12 @@ var wordBank = [
 var wins = 0;
 var word;
 var guessesRemaining;
-var incorrectGuessContainer;
+var incorrectGuesses;
 var correctGuesses;
 
 
 var wordContainer = document.getElementById('word');
 var winsContainer = document.getElementById('wins');
-
-
-// Uses rand number, set to all possible index values of wordBank, to choose a word from wordBank.
 
 
 
@@ -69,15 +66,12 @@ function updateGuesses(letter) {
 
 function checkWin() {
   if (correctGuesses.indexOf('_') === -1) {
-    alert('You Won!');
     startGame();
     wins++;
     winsContainer.innerHTML = wins;
 
   } else if (guessesRemaining === 0) {
-    alert('You Lost!');
     startGame();
-
   }
 }
 
