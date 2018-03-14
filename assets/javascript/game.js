@@ -14,39 +14,37 @@ var wordBank = [
 ];
 
 
-var wins;
+var wins = 0;
 var word;
 var guessesRemaining;
-var incorrectGuesses;
+var incorrectGuessContainer;
 var correctGuesses;
 
 
-var wordElement = document.getElementById('word');
-
-
-var wins = document.getElementById('wins');
+var wordContainer = document.getElementById('word');
+var winsContainer = document.getElementById('wins');
 
 
 // Uses rand number, set to all possible index values of wordBank, to choose a word from wordBank.
-var word = wordBank[Math.floor(Math.random() * wordBank.length)];
+
 
 
 // FUNCTIONS
 
 function startGame() {
-  wins = 0;
-  word = word;
+
+  word = wordBank[Math.floor(Math.random() * wordBank.length)];
   guessesRemaining = 10;
   incorrectGuesses = [];
-  correctGuesses =[];
+  correctGuesses = [];
 
   for (var i = 0; i < word.length; i++) {
     correctGuesses.push('_');
   }
-  wordElement.innerHTML = correctGuesses.join(' ');
-  guessCountElement = document.getElementById('guessCount');
-  guessCountElement.innerHTML = guessesRemaining;
-  lettersGuessedElement = document.getElementById('lettersGuessed');
+  wordContainer.innerHTML = correctGuesses.join(' ');
+  guessCountContainer = document.getElementById('guessCount');
+  guessCountContainer.innerHTML = guessesRemaining;
+  incorrectGuessContainer = document.getElementById('lettersGuessed');
 }
 
 function updateGuesses(letter) {
@@ -54,10 +52,10 @@ function updateGuesses(letter) {
 
   if (word.indexOf(letter) === -1) {
     guessesRemaining--;
-    guessCountElement.innerHTML = guessesRemaining;
+    guessCountContainer.innerHTML = guessesRemaining;
     
     incorrectGuesses.push(letter);
-    lettersGuessedElement.innerHTML = incorrectGuesses.join(', ');
+    incorrectGuessContainer.innerHTML = incorrectGuesses.join(', ');
 
   } else {
     for (var i = 0; i < word.length; i++) {
@@ -65,17 +63,20 @@ function updateGuesses(letter) {
         correctGuesses[i] = letter;
       }
     }
-    wordElement.innerHTML = correctGuesses.join(' ');
+    wordContainer.innerHTML = correctGuesses.join(' ');
   }
 }
 
 function checkWin() {
   if (correctGuesses.indexOf('_') === -1) {
+    alert('You Won!');
+    startGame();
     wins++;
-    wins.innerHTML = wins;
+    winsContainer.innerHTML = wins;
 
   } else if (guessesRemaining === 0) {
     alert('You Lost!');
+    startGame();
 
   }
 }
