@@ -1,23 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-us">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative" rel="stylesheet">
+  <link href="assets/css/reset.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
   <title>GOT Hangman</title>
 </head>
-<body>
-  <h1>Game of Thrones Hangman</h1>
-  <h2>The "dictionary" for this game is composed of the major house names from Game of Thrones.</h2>
-  <br>
-  <h2>Press any key to get started!</h2>
-  <div id="word"></div>
-  <div>Guesses Remaining: </div> <div id="guessCount"></div>
-  <div>Letters Guessed: </div> <div id="lettersGuessed"></div>
-  <div>Wins: </div> <div id="wins"></div>
 
+<body>
+
+  <div id="game-pane">
+    <h1>Game of Thrones Hangman</h1>
+    <h2>The "dictionary" for this game is composed of the major house names from Game of Thrones.</h2>
+    <br>
+    <h2>Press any key to get started!</h2>
+    <div id="word"></div>
+    <div>Guesses Remaining: </div>
+    <div id="guessCount"></div>
+    <div>Letters Guessed: </div>
+    <div id="lettersGuessed"></div>
+    <div>Wins: </div> <div id="wins"></div>
+  </div>
   <script src="assets/javascript/game.js"></script>
+
 </body>
+
 </html>

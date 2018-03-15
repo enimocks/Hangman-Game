@@ -21,8 +21,8 @@ var incorrectGuesses;
 var correctGuesses;
 
 
-var wordContainer = document.getElementById('word');
-var winsContainer = document.getElementById('wins');
+var wordEl = document.getElementById('word');
+var winsEl = document.getElementById('wins');
 
 
 
@@ -34,15 +34,17 @@ function startGame() { // initiates a round of the game with a unique, random wo
   guessesRemaining = 10;
   incorrectGuesses = [];
   correctGuesses = [];
+  wins = 0;
 
   for (var i = 0; i < word.length; i++) {
     correctGuesses.push('_');
   }
-  wordContainer.innerHTML = correctGuesses.join(' ');
+  wordEl.innerHTML = correctGuesses.join(' ');
   guessCountContainer = document.getElementById('guessCount');
   guessCountContainer.innerHTML = guessesRemaining;
   incorrectGuessContainer = document.getElementById('lettersGuessed');
   incorrectGuessContainer.innerHTML = incorrectGuesses.join(', ');
+  winsEl.innerHTML = wins;
 }
 
 // checks key pressed to see if match for secret word, pushes into array (replacing underscores) if match
@@ -63,7 +65,7 @@ function updateGuesses(letter) {
         correctGuesses[i] = letter;
       }
     }
-    wordContainer.innerHTML = correctGuesses.join(' ');
+    wordEl.innerHTML = correctGuesses.join(' ');
   }
 }
 
@@ -72,7 +74,7 @@ function checkWin() {
   if (correctGuesses.indexOf('_') === -1) {
     startGame();
     wins++;
-    winsContainer.innerHTML = wins;
+    winsEl.innerHTML = wins;
 
   } else if (guessesRemaining === 0) {
     startGame();
