@@ -10,9 +10,9 @@ h1 {
 
 h2 {
   font-size: 30px;
-  padding-left: 10%;
-  padding-right: 10%;
-  padding-bottom: 0.5em;
+  padding-left: 15%;
+  padding-right: 15%;
+  line-height: 1.25;
 }
 
 div {
@@ -21,25 +21,25 @@ div {
 }
 
 #word {
-  text-align: center;
-  font-size: 70px;
-  padding-bottom: 1em;  
+    text-align: center;
+    font-size: 80px;
+    padding: 0.5em 0;
 }
 
 #guessCount {
   text-align: center;
   font-weight: bold;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 #lettersGuessed {
   font-weight: bold;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 #wins {
   font-weight: bold;
-  padding: 15px 0;
+  padding: 10px 0;
 }
 
 #game-pane {
