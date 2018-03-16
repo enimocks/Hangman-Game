@@ -34,7 +34,6 @@ function startGame() { // initiates a round of the game with a unique, random wo
   guessesRemaining = 10;
   incorrectGuesses = [];
   correctGuesses = [];
-  wins = 0;
 
   for (var i = 0; i < word.length; i++) {
     correctGuesses.push('_');
